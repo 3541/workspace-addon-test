@@ -1,14 +1,15 @@
-function render_homepage(event: any) {
-    let section = CardService.newCardSection()
-        .setHeader("Section")
-        .addWidget(CardService.newTextParagraph().setText("A Paragraph"))
+import { build_section } from "./other"
 
+declare let global: any
+
+function render_homepage(event: any) {
     return CardService.newCardBuilder()
         .setName("Homepage")
         .setHeader(CardService.newCardHeader().setTitle("Homepage"))
-        .addSection(section)
+        .addSection(build_section())
         .build()
 }
+global.render_homepage = render_homepage
 
 function render_gmail(event: any) {
     return CardService.newCardBuilder()
@@ -17,3 +18,4 @@ function render_gmail(event: any) {
         .addSection(CardService.newCardSection())
         .build()
 }
+global.render_gmail = render_gmail

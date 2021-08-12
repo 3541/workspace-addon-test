@@ -6,13 +6,15 @@
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "format": "prettier --write src/**/*.{js,ts} *.json",
-        "build": "tsc",
+        "build": "tsc --noEmit && node esbuild.mjs",
         "deploy": "clasp push -f && clasp deploy -i $(cat .depid)"
     },
     "author": "",
     "license": "MIT",
     "devDependencies": {
         "@google/clasp": "^2.4.1",
+        "esbuild": "^0.12.19",
+        "esbuild-gas-plugin": "^0.2.1",
         "prettier": "^2.3.2",
         "typescript": "^4.3.5"
     },
