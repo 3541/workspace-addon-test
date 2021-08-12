@@ -1,0 +1,28 @@
+{
+    "name": "script-test",
+    "version": "0.1.0",
+    "description": "",
+    "main": "src/main.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "prettier --write src/**/*.{js,ts} *.json",
+        "build": "tsc",
+        "deploy": "clasp push -f && clasp deploy -i $(cat .depid)"
+    },
+    "author": "",
+    "license": "MIT",
+    "devDependencies": {
+        "@google/clasp": "^2.4.1",
+        "prettier": "^2.3.2",
+        "typescript": "^4.3.5"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": false,
+        "printWidth": 100,
+        "arrowParens": "avoid"
+    },
+    "dependencies": {
+        "@types/google-apps-script": "^1.0.37"
+    }
+}

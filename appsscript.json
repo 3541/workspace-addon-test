@@ -1,0 +1,22 @@
+{
+    "timeZone": "America/New_York",
+    "dependencies": {},
+    "exceptionLogging": "STACKDRIVER",
+    "runtimeVersion": "V8",
+    "oauthScopes": ["https://www.googleapis.com/auth/gmail.addons.execute"],
+    "addOns": {
+        "common": {
+            "name": "Apps Script Add-on Test",
+            "logoUrl": "https://raw.githubusercontent.com/google/material-design-icons/master/png/communication/chat_bubble/materialicons/18dp/1x/baseline_chat_bubble_black_18dp.png",
+            "homepageTrigger": { "runFunction": "render_homepage" }
+        },
+        "gmail": {
+            "contextualTriggers": [
+                {
+                    "unconditional": {},
+                    "onTriggerFunction": "render_gmail"
+                }
+            ]
+        }
+    }
+}
