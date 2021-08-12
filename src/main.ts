@@ -1,8 +1,9 @@
 import { build_section } from "./other"
+type Event = GoogleAppsScript.Events.AppsScriptEvent
 
 declare let global: any
 
-function render_homepage(event: any) {
+function render_homepage(event: Event) {
     return CardService.newCardBuilder()
         .setName("Homepage")
         .setHeader(CardService.newCardHeader().setTitle("Homepage"))
@@ -11,7 +12,7 @@ function render_homepage(event: any) {
 }
 global.render_homepage = render_homepage
 
-function render_gmail(event: any) {
+function render_gmail(event: Event) {
     return CardService.newCardBuilder()
         .setName("GMail Trigger")
         .setHeader(CardService.newCardHeader().setTitle("GMail Trigger"))
