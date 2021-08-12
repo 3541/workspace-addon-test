@@ -5,7 +5,7 @@
     "main": "src/main.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "format": "prettier --write src/**/*.{js,ts} *.json",
+        "format": "prettier --write src/**/*.ts *.json",
         "build": "tsc --noEmit && node esbuild.mjs",
         "deploy": "clasp push -f && clasp deploy -i $(cat .depid)"
     },
