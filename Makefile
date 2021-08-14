@@ -27,5 +27,9 @@ init:
 	if [ ! -d "node_modules" ]; then npm i; fi;
 	if [ ! -f "$(HOME)/.clasprc.json" ]; then npx clasp login; fi;
 	if [ ! -f ".clasp.json" ]; then npx clasp create --type standalone; fi;
-	if [ $$(npx clasp deployments | wc -l) -lt 3 ]; then npx clasp deploy; fi;
+	if [ $$(npx clasp deployments | wc -l) -lt 3 ]; then \
+		$(MAKE) $(BUILD_STAMP); \
+		npx clasp push -f; \
+		npx clasp deploy; \
+	fi
 	npx clasp deployments | tail -n1 | cut -d' ' -f2 > .depid
